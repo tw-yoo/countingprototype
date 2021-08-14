@@ -1,0 +1,169 @@
+<html>
+<head>
+    <title>Case 2</title>
+    <link rel="stylesheet" href="style.css">
+	<style>
+		li{
+    		margin: 15px 0;
+		}
+		div.column_nav {
+			float: left;
+			width: 10%;
+			height:100%;
+			
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+			font-size: 20px;
+		}
+		.column_main {
+			width: 50%;
+			margin: 0 auto;
+			
+		}
+		.column {
+		float: left;
+		width: 50%;
+		}
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		#nav {
+			width: 25%;
+			float: left;
+			text-align:center;
+			padding-top: 20%;
+			
+		}
+	</style>
+	
+</head>
+
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+    please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<div id="block" style="height:100px;width:50%; margin: 0 auto;">
+<div class="column"><h1>Case 2</h1><p>아래 파란색 박스는 무시해주세요</p></div>
+<div style="width:10%; float:left; margin-top:35px; text-align:right;"></div>
+<div style="width:15%; float:left; margin-top:35px; text-align:right;"><a href="../index.html"><img src="https://drive.google.com/uc?export=view&id=1hyddBVgV5ZpijBuc3eGvOAdmnPlslKMu"style="width:20%;"/></a></div>
+<div style="width:10%; float:left; margin-top:15px; text-align:center;"><p style="font-size:1.2em;"><strong>2/4</strong></p></div>
+<div style="width:15%; float:left; margin-top:35px; text-align:left;"><a href="prototype_v4_p3.html"><img src="https://drive.google.com/uc?export=view&id=1uJqKuPZeY0k7duP6M1c11gi3n4KkbUa_" style="width:20%;"/></a></div>
+</div>
+
+
+</br>
+<div id="box">
+<div id="main" class="column_main" style="">
+
+<hr>
+<crowd-form answer-format="flatten-objects">
+    <p><strong>After reading the instructions, count the number of white spots in the given image below.</strong></p>
+
+	<!-- Instructions -->
+    <crowd-instructions link-text="View instructions" link-type="button">
+		<!-- Short summary -->
+		  <short-summary>
+		    <p>Your task is to count cells. For task, two images (Image 1 and Image 2) are provided: Image 1 is an image of mouse eye showing cornea, iris, lens, and anterior chamber. Image 2 is a magnified image of a blue and yellow boxed area in the Image 1.</p> 
+			<p> What to do is to count the cells (white single spots) in the anterior chamber of the Image 2. </p> 
+			<p> For more information, please click on "Detailed Instructions".</p>
+			<table style="width:80%; margin: 0 auto;">
+			<th style="width: 60%; height:auto; font-size:1.5em;">Image 1</th>
+			<th style="width: 40%; height: auto;font-size:1.5em;">Image 2</th>
+				<tr>
+					<td style="text-align:center;"><img src="https://drive.google.com/uc?export=view&id=1wsGDpL1BHFftNV2IM4RqASnxThTglaG2" style="width: 100%; height: auto; margin: 0 auto;" /></td>
+					<td style="text-align:center;"><img src="https://drive.google.com/uc?export=view&id=17Pia4RTvjj0zI7Y4NCVc03y9u71QzmKG" style="width:80%; height: auto; margin: 0 auto;" /></td>
+				</tr>
+			</table>
+			
+		  </short-summary>
+
+		<!-- Detailed instructions -->
+			<detailed-instructions>
+			<p>This task is part of our scientific project to access the severity of eye inflammation, which is estimated by counting the group of inflammatory cells in the anterior chamber of the inflamed eye.</p>
+			<p>Your contribution to the task is to count the cells in the given eye image. To start the work, please follow procedures as below:</p>
+
+			<ul>
+				<li>Two images (Image 1 and Image 2) are provided: Image 1 is a cross-sectional image of mouse eye showing ocular structures such as cornea, iris, lens, and anterior chamber. The anterior chamber is surrounded by others. Image 2 is a magnified image of a blue and yellow outlined area in the Image 1.</li>
+				<li><strong>You can count the inflammatory cells (white spots) in the Image 2, considering following five rules (R1 to R5):</strong></li>
+				<ul>
+					<li style="color:red;"><strong>R1: COUNT</strong> spots inside the anterior chamber.</li>
+					<li style="color:red;"><strong>R2: COUNT</strong> spots if the spots are inside the anterior chamber and at the blue borders.</li>
+					<li style="color:red;"><strong>R3: DO NOT COUNT </strong> spots if the spots are outside the anterior chamber.</li>
+					<li style="color:red;"><strong>R4: DO NOT COUNT</strong> spots if the spots are at the boundary of the anterior chamber.</li>
+					<li style="color:red;"><strong>R5: DO NOT COUNT</strong> spots if the spots are at the yellow borders.</li>
+				</ul>
+				<li>After completion of the counting, please submit the total counts.</li>
+			</ul>
+
+			<table style="width:100%; margin: 0 auto;">
+				<th style="width: 70%; height:auto; font-size:1.5em;">Image 1</th>
+				<th style="width: 80%; height: auto; font-size:1.5em;">Image 2</th>
+					<tr>
+						<td style="text-align:center;"><img src="https://drive.google.com/uc?export=view&id=1wsGDpL1BHFftNV2IM4RqASnxThTglaG2" style="width: 100%; height: auto; margin: 0 auto;" /></td>
+						<td style="text-align:center;"><img src="https://drive.google.com/uc?export=view&id=17Pia4RTvjj0zI7Y4NCVc03y9u71QzmKG" style="width:80%; height: auto; margin: 0 auto;" /></td>
+					</tr>
+			</table>
+			
+			</detailed-instructions>
+		
+
+		  <positive-example>
+		  <strong>After reading the following rules (R1 to R5), please count the cells seen as discrete white spots.</strong>
+		  	<ul style="font-size:1.2em;">
+				<li style="color:red;"><strong>R1: COUNT</strong> spots inside the anterior chamber.</li>
+				<li style="color:red;"><strong>R2: COUNT</strong> spots if the spots are inside the anterior chamber and at the blue borders.</li>
+				<li style="color:red;"><strong>R3: DO NOT COUNT </strong> spots if the spots are outside the anterior chamber.</li>
+				<li style="color:red;"><strong>R4: DO NOT COUNT</strong> spots if the spots are at the boundary of the anterior chamber.</li>
+				<li style="color:red;"><strong>R5: DO NOT COUNT</strong> spots if the spots are at the yellow borders.</li>
+			</ul>
+
+			<p style="font-size:1.5em;">Image 1</p> </br>
+			<img src="https://drive.google.com/uc?export=view&id=1DEq-Z-mu8R1JGvoWDwk1Exseaigo1Ntb" style="width: 80%; height: auto;" /></br>
+		
+		
+			<p style="font-size:1.5em;">Image 2</p> </br>
+
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<img src="https://drive.google.com/uc?export=view&id=1fpDVQ6qifBJxC453wqwZ2Iw5xX1CEWuH" style="width: 100%; height: auto;" />
+						</td>
+						<td>
+							<img src="https://drive.google.com/uc?export=view&id=1BcJIc65FbYKJLAW8mFWqibA7QBIhvxLp" style="width: 100%; height: auto;" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p style="font-size:1.5em;"><strong>Total counts: 3</strong></p></br>
+		  </positive-example>
+		  
+	</crowd-instructions> 
+    
+    <p style="font-size: 1.5em;">Image 1</p>
+    <p><img src="https://drive.google.com/uc?export=view&id=1DEq-Z-mu8R1JGvoWDwk1Exseaigo1Ntb" style="width: 100%; height: auto;" /></p>
+    
+    
+    <p style="font-size: 1.5em;">Image 2</p>
+    <p><img src="https://drive.google.com/uc?export=view&id=17Pia4RTvjj0zI7Y4NCVc03y9u71QzmKG" style="width: 50%; height: auto;" /></p>
+    
+    <h3>
+
+      <br/>
+      <strong>Count white spots in Image 2 based on Instructions and enter the total counts.</strong>
+      
+    </h3>
+
+    <crowd-input label="Enter the number of white spots" max-length="3" name="spots" type="number" placeholder="e.g., 4" required></crowd-input>
+	
+</crowd-form>
+</div>
+
+</div>
+</html>
